@@ -50,6 +50,7 @@ KTC <- dat %>%
 ## Manipulate map data 
 ## with package tmap
 ## --------------------
+library(tmaptools)
 library(tmap)
 
 # Load shape file
@@ -61,12 +62,12 @@ thaiAdmin_KTC <- thaiAdmin  # Use thaiAdmin_map for mapping
 thaiAdmin_KTC@data <- left_join(thaiAdmin_KTC@data, KTC)  # Map data to thaiAdmin_map
 
 ## -------------------------------
-## 1. Plot with ptm (quick plot)
+## 1. Plot with qtm (quick plot)
 ## -------------------------------
 
 qtm(thaiAdmin_KTC)
 
-qtm(thaiAdmin_KTC, fill = "n", fill.palette = "div", fill.title = "CC+PL Finalized",
+qtm(thaiAdmin_KTC, fill = "n", fill.palette = "div",  title = "CC+PL Finalized",
     text = "NAME_1", text.size = "AREA", root = 1)
 
 ## -------------------------------
